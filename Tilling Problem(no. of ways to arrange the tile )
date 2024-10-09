@@ -1,0 +1,29 @@
+public class TilingProblem {
+    public static int tile(int n) {
+        //base case 
+        if (n == 0 || n == 1) {
+            return 1;
+}
+
+        //kaam  
+        //vertical tiles
+        int fnm1 = tile(n - 1);
+
+        // horihonatal tile 
+
+        int fnm2 = tile(n - 2);
+
+        //totle number of ways 
+
+        int totways = fnm1 + fnm2;
+
+        return totways; 
+
+
+    }
+    public static void main(String[] args) {
+        //call the function 
+        int n = 4; 
+        System.out.println(tile(n));
+    }
+}

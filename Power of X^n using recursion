@@ -1,0 +1,17 @@
+ public class x_Power_n{
+    public static int PowerFunction(int x, int n ){
+        if(n==0){
+            return 1; 
+        }
+        int xnm1= PowerFunction(x, n-1);
+        int xn= x*xnm1;
+        return xn;
+    }
+
+     public static void main(String[] args) {
+        int x=2;
+        int n=5;
+
+         System.out.println(PowerFunction(x,n));
+     }
+}

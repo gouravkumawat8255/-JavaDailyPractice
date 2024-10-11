@@ -1,0 +1,25 @@
+public class FriendPairingProblem {
+
+    // Method to calculate the total number of ways friends can either stand alone or pair up
+    public static int countWays(int n) {
+        // Base cases: if there's only 1 or 2 friends, they can either stand alone or pair up
+        if (n == 1 || n == 2) {
+            return n;
+        }
+
+        // Recursive case:
+        // 1. The nth friend can stand alone, so we calculate the number of ways for (n - 1) friends.
+        int single = countWays(n - 1);
+
+        // 2. The nth friend can pair up with any of the remaining (n - 1) friends.
+        int pair = (n - 1) * countWays(n - 2);
+
+        // Total ways is the sum of both cases
+        return single + pair;
+    }
+
+    public static void main(String[] args) {
+        int n = 4; // Example: 4 friends
+        System.out.println("Total number of ways in which " + n + " friends can either stand alone or pair up: " + countWays(n));
+    }
+}

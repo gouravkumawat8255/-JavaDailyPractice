@@ -1,0 +1,20 @@
+public class Binary_String_problem {
+    public static void binary(int n, int lastplace, String str) {
+        if (n == 0) {
+            System.out.println(str);
+            return;
+        }
+
+        // Add '0'
+        binary(n - 1, 0, str + "0");
+
+        // Add '1' only if lastplace is 0
+        if (lastplace == 0) {
+            binary(n - 1, 1, str + "1");  // Change lastplace to 1
+        }
+    }
+
+    public static void main(String[] args) {
+        binary(10, 0, "");  // Example call with n=3
+    }
+}
